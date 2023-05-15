@@ -1,19 +1,19 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
   <header>
-    <nav className="navBar">
+    <nav>
+      <div id="logo">
+        <div className="logoImage" />
+        <div className="logoText"> Space Travelers&apos;Hub</div>
+      </div>
       <div className="navItems">
-        <div id="logo">
-          <div className="logoImage" />
-          <div className="logoText"> Space Travelers&apos;Hub</div>
-        </div>
-        {/* <ul className="navLinks">
-        <li><Link to="/">Rockets</Link></li>
-        <li><Link to="mission">Missions</Link></li>
-        <li><Link to="myprofile">| My Profile</Link></li>
-      </ul> */}
+        <ul className="navLinks">
+          {/* <li><NavLink to="/" activeClassName="active">Rockets</NavLink></li>
+          <li><NavLink to="mission" activeClassName="active">Missions</NavLink></li> */}
+          <li><NavLink to="myprofile" activeClassName="active">| My Profile</NavLink></li>
+        </ul>
       </div>
     </nav>
   </header>
