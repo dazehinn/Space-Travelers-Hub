@@ -36,10 +36,12 @@ nav {
 
 .navLinks {
   list-style: none;
+  display: flex;
 }
 
 :link {
   text-decoration: none;
+  margin-right: 12px;
 }
 
 :link.active {
