@@ -10,7 +10,7 @@ const Navbar = () => (
       </div>
       <div className="navItems">
         <ul className="navLinks">
-          {/* <li><NavLink to="/" activeClassName="active">Rockets</NavLink></li> */}
+          <li><NavLink to="/" activeClassName="active">Rockets</NavLink></li>
           <li><NavLink to="mission" activeClassName="active">Missions</NavLink></li>
           <li><NavLink to="myprofile" activeClassName="active">| My Profile</NavLink></li>
         </ul>
