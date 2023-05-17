@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/navBar';
 import Rockets from './components/Rockets/Rockets';
 import Profiles from './components/profiles';
-import Missions from './components/missions';
+import Missions from './components/Missions/missions';
 
 export default function App() {
   return (
