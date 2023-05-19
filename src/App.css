@@ -20,6 +20,16 @@ nav {
   align-items: center;
 }
 
+.reservedRocketProfile {
+  border-bottom: 1px solid black;
+  width: 250px;
+}
+
+.rocketProfile {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
 .logoImage {
   background-image: url("https://th.bing.com/th/id/R.dc80f7d959f5842ee3df7dc9066aa51b?rik=0ZKo4Vy2GlCDsg&pid=ImgRaw&r=0");
   background-repeat: no-repeat;
