@@ -23,10 +23,10 @@ const missionsSlice = createSlice({
     error: '',
   },
   reducers: {
-    // joinMission: (state, action) => {
-    //   const mission = state.missions.find((m) => m.mission_id === action.payload);
-    //   mission.joined = !mission.joined;
-    // },
+    joinMission: (state, action) => {
+      const mission = state.missions.find((m) => m.mission_id === action.payload);
+      mission.joined = !mission.joined;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getMissions.pending, (state) => {
