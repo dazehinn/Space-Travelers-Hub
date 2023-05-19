@@ -17,45 +17,45 @@ const Missions = () => {
   };
 
   return (
-    <div className="overflow-x-auto relative shadow-md rounded-lg">
-      <table className="text-sm text-left text-gray-500 m-8 border">
-        <thead className="text-xs text-gray-700 uppercase bg-white">
-          <tr>
-            <th scope="col" className="py-3 px-6 border">
+    <div className="tableArea">
+      <table>
+        <thead>
+          <tr className="head">
+            <th>
               Mission
             </th>
-            <th scope="col" className="py-3 px-6 border">
+            <th>
               Description
             </th>
-            <th scope="col" className="py-3 px-6 border">
+            <th>
               Status
             </th>
-            <th scope="col" className="py-3 border">
+            <th>
               {' '}
             </th>
           </tr>
         </thead>
-        <tbody className="mx-5">
-          {missions.map((mission, index) => (
-            <tr className={`${index % 2 === 0 ? 'bg-white' : 'bg-[#F2F2F2]'} border-b`} key={mission.mission_id}>
-              <th scope="row" className="py-4 px-6 font-medium border text-gray-900 whitespace-nowrap">
+        <tbody>
+          {missions.map((mission) => (
+            <tr key={mission.mission_id}>
+              <th className="tname">
                 {mission.mission_name}
               </th>
-              <td className="py-4 px-6 border w-2/3">
+              <td className="tdesc">
                 {mission.description}
               </td>
-              <td className="py-4 px-6 border">
+              <td className="tstatus">
                 {mission.joined ? (
-                  <span className="bg-[#31A1B8] text-white text-xs p-2 rounded">Active Member</span>
+                  <span className="activeMember">Active Member</span>
                 ) : (
-                  <span className="bg-[#6D757D] text-white text-xs p-2 rounded">NOT A MEMBER</span>
+                  <span className="nActiveM">NOT A MEMBER</span>
                 )}
               </td>
-              <td className="py-4 px-6 border">
+              <td className="tbutton">
                 {mission.joined ? (
-                  <button type="button" className="text-[#DD3B4A] border border-[#DD3B4A] text-xs p-2 rounded" onClick={() => handleClick(mission.mission_id)}>Leave Mission</button>
+                  <button type="button" className="leave" onClick={() => handleClick(mission.mission_id)}>Leave Mission</button>
                 ) : (
-                  <button type="button" className="text-[#6D757D] border border-[#6D757D] text-xs p-2 rounded" onClick={() => handleClick(mission.mission_id)}>Join Mission</button>
+                  <button type="button" className="join" onClick={() => handleClick(mission.mission_id)}>Join Mission</button>
                 )}
               </td>
             </tr>
