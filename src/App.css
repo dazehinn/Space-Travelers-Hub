@@ -86,7 +86,6 @@ tr:nth-child(even) {
 
 .head {
   background-color: white;
-
 }
 
 .nActiveM {
@@ -148,7 +147,7 @@ tr:nth-child(even) {
 }
 
 .tstatus {
-  width: 8%
+  width: 8%;
 }
 
 .tbutton {
