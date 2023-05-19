@@ -16,22 +16,12 @@ export const rocketsSlice = createSlice({
   initialState,
   reducers: {
     reserveRocket: (state, action) => {
-      const rocketID = action.payload;
-      state.rocketArray = state.rocketArray.map((rocket) => {
-        if (rocket.id !== rocketID) {
-          return rocket;
-        }
-        return { ...rocket, reserved: true };
-      });
+      const rockets = state.rocketArray.find((rocket) => rocket.id === action.payload);
+      rockets.isReserved = true;
     },
     cancelRocket: (state, action) => {
-      const rocketID = action.payload;
-      state.rocketArray = state.rocketArray.map((rocket) => {
-        if (rocket.id !== rocketID) {
-          return rocket;
-        }
-        return { ...rocket, reserved: false };
-      });
+      const rockets = state.rocketArray.find((rocket) => rocket.id === action.payload);
+      rockets.isReserved = false;
     },
   },
   extraReducers: {
@@ -39,13 +29,34 @@ export const rocketsSlice = createSlice({
       state.isLoading = true;
     },
     [fetchRockets.fulfilled]: (state, action) => {
-      state.isLoading = false;
-      state.rocketArray = action.payload;
+      const rocketArray = action.payload.map((rocket) => ({
+        id: rocket.id,
+        name: rocket.name,
+        type: rocket.type,
+        flickr_images: [...rocket.flickr_images],
+        description: rocket.description,
+        isReserved: false,
+      }));
+      // state.isLoading = false;
+      // state.rocketArray = action.payload;
+      return { ...state, isLoading: false, rocketArray };
     },
     [fetchRockets.rejected]: (state) => {
       state.isLoading = false;
     },
   },
+  // extraReducers: (builder) => {
+  //   builder.addCase(fetchRockets.pending, (state) => {
+  //     state.isLoading = true;
+  //   });
+  //   builder.addCase(fetchRockets.fulfilled, (state, action) => {
+  //     state.isLoading = false;
+  //     state.rocketArray = action.payload;
+  //   });
+  //   builder.addCase(fetchRockets.rejected, (state) => {
+  //     state.isLoading = false;
+  //   });
+  // },
 });
 
 export default rocketsSlice.reducer;
