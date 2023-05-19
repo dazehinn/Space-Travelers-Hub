@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import styles from './Rockets.module.css';
 import { fetchRockets, reserveRocket, cancelRocket } from '../../redux/rockets/rocketsSlice';
 
@@ -8,9 +7,11 @@ const Rockets = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchRockets());
-  }, [dispatch]);
+  if (rocketArray.length === 0) {
+    setTimeout(() => {
+      dispatch(fetchRockets());
+    }, '1000');
+  }
 
   if (isLoading) {
     return (
@@ -29,13 +30,13 @@ const Rockets = () => {
           <div className={styles.rocketInfo}>
             <h2>{rocket.name}</h2>
             <p>
-              <span className={rocket.reserved ? styles.reserved : styles.noReserved}>
+              <span className={rocket.isReserved ? styles.reserved : styles.noReserved}>
                 Reserved
               </span>
               {rocket.description}
             </p>
             <button
-              className={rocket.reserved ? styles.noReserved : styles.reserveBtn}
+              className={rocket.isReserved ? styles.noReserved : styles.reserveBtn}
               type="button"
               onClick={() => (
                 dispatch(reserveRocket(rocket.id)))}
@@ -44,7 +45,7 @@ const Rockets = () => {
             </button>
 
             <button
-              className={rocket.reserved ? styles.cancelBtn : styles.noReserved}
+              className={rocket.isReserved ? styles.cancelBtn : styles.noReserved}
               type="button"
               onClick={() => (
                 dispatch(cancelRocket(rocket.id)))}
