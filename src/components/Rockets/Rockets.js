@@ -1,3 +1,4 @@
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './Rockets.module.css';
 import { fetchRockets, reserveRocket, cancelRocket } from '../../redux/rockets/rocketsSlice';
@@ -22,8 +23,8 @@ const Rockets = () => {
   }
 
   return (
-    rocketArray.map((rocket) => (
-
+   <div>
+    {rocketArray.map((rocket) => (
       <div key={rocket.id}>
         <div className={styles.rocketCard}>
           <img className={styles.rocketImg} src={rocket.flickr_images} alt="rocket" />
@@ -56,8 +57,8 @@ const Rockets = () => {
           </div>
         </div>
       </div>
-    ))
-  );
+    ))}</div>)
+  
 };
 
 export default Rockets;
