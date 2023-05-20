@@ -36,8 +36,14 @@ const Profiles = () => {
 
       <div className="rocketProfile">
         <h2>My Rockets</h2>
-        {reservedRockets.map((rocket) => (
-          <h3 key={rocket.id} className="reservedRocketProfile">{rocket.name}</h3>))}
+        {reservedRockets.length > 0 ? (
+          <div className="border rounded">
+            {reservedRockets.map((rocket) => (
+              <h3 key={rocket.id} className="reservedRocketProfile">{rocket.name}</h3>))}
+          </div>
+        ) : (
+          <p>No reserved rocket</p>
+        )}
       </div>
     </div>
   );
