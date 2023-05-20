@@ -45,13 +45,14 @@ CSS
 Components
 React
 APIs
+Redux
 
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="#">HTML, CSS, JavaScript, React , API</a></li>
+    <li><a href="#">HTML, CSS, JavaScript, React , API, Redux</a></li>
   </ul>
 </details>
 
@@ -167,7 +168,10 @@ You can deploy this project using: GitHub Pages,
 
 ## 👥 Author <a name="authors"></a>
 
-👤 **Your name**
+👤 **Nshanji Hilary**
+- GitHub: [dazehinn](https://github.com/dazehinn)
+- Twitter: [@HilaryNdzi](https://twitter.com/hilaryndzi)
+- LinkedIn: [Nshanji Hilary Ndzi](https://www.linkedin.com/in/nshanji-hilary-ndzi)
 
 
 
