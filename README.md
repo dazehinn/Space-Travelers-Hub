@@ -219,9 +219,9 @@ I want to thank my coding partner Fredo st fleur who help me a lot to complete t
 
 - **[How this list works]**
 
-  - [you can see the list of action movies]
-  - [you can add likes]
-  - [you can add comments]
+  - [you can see the list of Rockets and Missions]
+  - [you can reserved or Cancel reservation for a rocket and you will see the rocket reserved in myprofile page]
+  - [you can join or leave a mission and you will see the mission joined in myprofile page]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
