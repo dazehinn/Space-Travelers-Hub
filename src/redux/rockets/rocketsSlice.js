@@ -37,26 +37,12 @@ export const rocketsSlice = createSlice({
         description: rocket.description,
         isReserved: false,
       }));
-      // state.isLoading = false;
-      // state.rocketArray = action.payload;
       return { ...state, isLoading: false, rocketArray };
     },
     [fetchRockets.rejected]: (state) => {
       state.isLoading = false;
     },
   },
-  // extraReducers: (builder) => {
-  //   builder.addCase(fetchRockets.pending, (state) => {
-  //     state.isLoading = true;
-  //   });
-  //   builder.addCase(fetchRockets.fulfilled, (state, action) => {
-  //     state.isLoading = false;
-  //     state.rocketArray = action.payload;
-  //   });
-  //   builder.addCase(fetchRockets.rejected, (state) => {
-  //     state.isLoading = false;
-  //   });
-  // },
 });
 
 export default rocketsSlice.reducer;
