@@ -1,7 +1,7 @@
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import Profiles from '../components/profiles';
-import store from '../redux/Store';
+import store from '../redux/store';
 
 it('Test Profiles component renders correctly', () => {
   const tree = renderer
