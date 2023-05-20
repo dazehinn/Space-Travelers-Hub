@@ -26,8 +26,8 @@ nav {
 }
 
 .rocketProfile {
-  margin-left: 25%;
-  margin-right: 25%;
+  margin: 5%;
+  width: 100%;
 }
 
 .logoImage {
@@ -162,4 +162,9 @@ tr:nth-child(even) {
 
 .tbutton {
   width: 15%;
+}
+
+.profileB {
+  display: flex;
+  padding: 0;
 }
